@@ -14,7 +14,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        img = docker.build("${DOCKER_REPO}:myBuild-1.0", "superFast")
+        img = docker.build("${DOCKER_REPO}:myBuild-1.0", ".")
         //sh 'docker build . -t manee2k6/dplinetech:pythonApp-1.0'
        // app = docker.build("manee2k6/explore:${env.BUILD_NUMBER}")
         
