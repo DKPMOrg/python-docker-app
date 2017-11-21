@@ -23,7 +23,10 @@ node {
         /* withDockerRegistry([credentialsId: 'docker-hub-credential', url: 'https://hub.docker.com/']) {
             app.push("${env.BUILD_NUMBER}") 
             app.push("latest")*/
-        img.push()
-        img.push('latest')
+        docker.withRegistry('https://index.docker.io/v1/', 'DockerID') {
+            img.push('latest')
+        }
+        
+        
        }
     }
